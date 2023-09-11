@@ -1,0 +1,124 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String st = sc.nextLine();
+        System.out.println(answ(st));
+    }
+
+    public static String CD (String str){
+        String[] smv = str.split(" ");
+        int r = 0;
+        if (!smv[1].equals(0) && !smv[1].equals(1) && !smv[1].equals(" ") && !smv[1].equals("_"))
+            r = 0;
+        if (r == 0)
+            throw new RuntimeException();
+        if (r == 2) {
+            if (smv[0].equals("A"))
+                smv[0] = "10";
+            if (smv[0].equals("B"))
+                smv[0] = "11";
+            if (smv[0].equals("C"))
+                smv[0] = "12";
+            if (smv[0].equals("D"))
+                smv[0] = "4";
+            if (smv[0].equals("V"))
+                smv[0] = "5";
+            if (smv[0].equals("VI"))
+                smv[0] = "6";
+            if (smv[0].equals("VII"))
+                smv[0] = "7";
+            if (smv[0].equals("VIII"))
+                smv[0] = "8";
+            if (smv[0].equals("IX"))
+                smv[0] = "9";
+            if (smv[0].equals("X"))
+                smv[0] = "10";
+
+            if (smv[2].equals("I"))
+                smv[2] = "1";
+            if (smv[2].equals("II"))
+                smv[2] = "2";
+            if (smv[2].equals("III"))
+                smv[2] = "3";
+            if (smv[2].equals("IV"))
+                smv[2] = "4";
+            if (smv[2].equals("V"))
+                smv[2] = "5";
+            if (smv[2].equals("VI"))
+                smv[2] = "6";
+            if (smv[2].equals("VII"))
+                smv[2] = "7";
+            if (smv[2].equals("VIII"))
+                smv[2] = "8";
+            if (smv[2].equals("IX"))
+                smv[2] = "9";
+            if (smv[2].equals("X"))
+                smv[2] = "10";
+        }
+        int n1 = Integer.parseInt(smv[0]);
+        int n2 = Integer.parseInt(smv[2]);
+        int n3 = 0;
+        if (smv[1].equals("+"))
+            n3 = n1 + n2;
+        if (smv[1].equals("-"))
+            n3 = n1 - n2;
+        if (smv[1].equals("/"))
+            n3 = n1 / n2;
+        if (smv[1].equals("*"))
+            n3 = n1 * n2;
+
+        if (r == 1)
+            return String.valueOf(n3);
+        String n5 = "";
+        if (r == 2 && n3 > 0)
+        {
+            int n4 = n3 / 10;
+            int n41 = n3 % 10;
+            if (n4 == 1)
+                n5 = n5 + "X";
+            if (n4 == 2)
+                n5 = n5 + "XX";
+            if (n4 == 3)
+                n5 = n5 + "XXX";
+            if (n4 == 4)
+                n5 = n5 + "XL";
+            if (n4 == 5)
+                n5 = n5 + "L";
+            if (n4 == 6)
+                n5 = n5 + "LX";
+            if (n4 == 7)
+                n5 = n5 + "LXX";
+            if (n4 == 8)
+                n5 = n5 + "LXXX";
+            if (n4 == 9)
+                n5 = n5 + "XC";
+            if (n4 == 10)
+                n5 = n5 + "C";
+
+            if (n41 == 1)
+                n5 = n5 + "I";
+            if (n41 == 2)
+                n5 = n5 + "II";
+            if (n41 == 3)
+                n5 = n5 + "III";
+            if (n41 == 4)
+                n5 = n5 + "IV";
+            if (n41 == 5)
+                n5 = n5 + "V";
+            if (n41 == 6)
+                n5 = n5 + "VI";
+            if (n41 == 7)
+                n5 = n5 + "VII";
+            if (n41 == 8)
+                n5 = n5 + "VIII";
+            if (n41 == 9)
+                n5 = n5 + "IX";
+            return n5;
+        }
+        if (r == 2 && n3 < 1)
+            throw new RuntimeException();
+        return "0";
+    }
+}
