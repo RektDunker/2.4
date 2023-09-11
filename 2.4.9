@@ -6,7 +6,18 @@ public class Main {
         String st = sc.nextLine();
         System.out.println(answ(st));
     }
-
+public static class Student {
+    protected final String studying;
+    protected Student(String work) {
+        this.studying = work;
+    }
+    public Student() {
+        this.studying = "Прохожу тестовое задание";
+    }
+    public void study() {
+        System.out.println("Я очень занят" + studying);
+    }
+}
     public static String CD (String str){
         String[] smv = str.split(" ");
         int r = 0;
